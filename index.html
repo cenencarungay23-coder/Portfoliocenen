@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>cenen-I build websites that just work</title>
+<meta name="description" content="cenen is a web developer and designer with 7 years building WordPress, Shopify and PHP sites for agencies and business owners.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="top"><div class="wrap in">
+ <a class="brand" href="index.html">
+  <img src="Images/cenen-fullstack-logo-aligned.gif" alt="Cenen — Full-Stack Developer">
+</a>
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="work.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="#talk">Say hi</a>
+  </div>
+</div></nav>
+<br><br>
+  
+<!-- HERO -->
+<header class="blk" style="padding-top:clamp(30px,5vw,64px);position:relative;overflow:hidden">
+  <div class="wrap" style="display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,4vw,56px);align-items:center" id="heroGrid">
+    <div>
+      <span class="eyeb" style="background:var(--grass);color:#fff">● Available for new projects</span>
+      <h1 style="font-size:clamp(2.4rem,7vw,5.2rem);max-width:14ch;margin-bottom:18px">
+        <span data-kin>Websites should just</span> <span class="hl">work.</span>
+      </h1>
+      <p class="lead">Hey. I am Cenen, a professional web developer and designer with more than 8 years of experience crafting innovative, user-friendly, and high-performing websites. </p>
+     
+      <div class="cta">
+        <a href="work.html" class="btn solid">See the work</a>
+        <a href="#talk" class="btn">Say hi 👋</a>
+      </div>
+    </div>
+    <div>
+      <div id="deskArt"></div>
+      <div class="build-bar">
+        <span id="buildDots"><i></i><i></i><i></i><i></i></span>
+        <span id="buildCaption">Press play to watch a site get built</span>
+      </div>
+    </div>
+  </div>
+  <span class="sticker" style="--r:-10deg;top:8%;left:2%"><svg width="72" height="72"><use href="#s-coffee"/></svg></span>
+  <span class="sticker" style="--r:14deg;bottom:12%;left:6%"><svg width="58" height="58"><use href="#s-bolt"/></svg></span>
+  <span class="sticker" style="--r:-18deg;top:52%;left:-1%"><svg width="54" height="54"><use href="#s-star"/></svg></span>
+</header>
+
+<div class="strip"><div class="rail" id="rail"></div></div>
+
+<!-- BELIEFS -->
+<section class="blk rv" style="padding-top:50px;padding-bottom:50px">
+  <div class="wrap">
+    <span class="eyeb">3 things I believe</span>
+    <h2 class="big" data-kin>Opinions I've earned the hard way</h2>
+    <p class="lead">Seven years of client work teaches you a few things. These are the ones I'd argue about.</p>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(270px,1fr));margin-top:42px">
+      <div class="card" style="padding:28px"><div style="font-family:Bricolage Grotesque;font-size:2.6rem;color:var(--tomato)">01</div><h3 style="font-size:1.25rem;margin:12px 0 8px">Build for the long run</h3><p style="margin:0;color:var(--ink2);font-size:.95rem">A website shouldn't just look good on launch day. It should be easy to maintain, update and grow as your business changes.</p></div>
+      <div class="card" style="padding:28px"><div style="font-family:Bricolage Grotesque;font-size:2.6rem;color:var(--sky)">02</div><h3 style="font-size:1.25rem;margin:12px 0 8px">The handover is the product</h3><p style="margin:0;color:var(--ink2);font-size:.95rem">Anyone can launch a site. Leaving behind docs, clean code and a client who isn't scared to touch it,that's the actual job.</p></div>
+      <div class="card" style="padding:28px"><div style="font-family:Bricolage Grotesque;font-size:2.6rem;color:var(--grass)">03</div><h3 style="font-size:1.25rem;margin:12px 0 8px">Say the bad news early</h3><p style="margin:0;color:var(--ink2);font-size:.95rem">Every project hits something ugly. Telling you in week one costs a conversation. Telling you in week six costs the deadline.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED WORK -->
+<section class="blk rv">
+  <div class="wrap">
+    <h2 class="big" data-kin>Recent builds</h2>
+    <p class="lead">Four of thirty-odd. Each one has a full write-up.</p>
+    <div class="grid" id="featured" style="margin-top:38px"></div>
+    <div class="cta"><a href="work.html" class="btn">View all projects →</a></div>
+  </div>
+</section>
+
+<!-- PINNED HORIZONTAL PROCESS -->
+<div class="pin-outer">
+  <div class="pin">
+    <div class="pin-track" id="pinTrack">
+      <div class="pin-card" style="flex-basis:clamp(230px,22vw,300px)">
+        <span class="eyeb" style="margin:0 0 14px">How I work</span>
+        <h3 style="font-size:clamp(1.6rem,3vw,2.4rem)">Six steps, no mystery</h3>
+        <p style="color:var(--ink2);margin-top:10px;font-size:.94rem">Scroll sideways →</p>
+      </div>
+      <div class="pin-card"><b>1</b><h4>Plan</h4><p>Get clear on what we're building, why it matters, and what success looks like.</p></div>
+      <div class="pin-card"><b>2</b><h4>Dig in</h4><p>Understand the users, the details, and the little things that could cause trouble later.</p></div>
+      <div class="pin-card"><b>3</b><h4>Design</h4><p>Turn the ideas into clear, thoughtful screens that feel right for your brand.</p></div>
+      <div class="pin-card"><b>4</b><h4>Build</h4><p>Clean, maintainable code on whichever platform actually fits.</p></div>
+      <div class="pin-card"><b>5</b><h4>Test</h4><p>Every browser, every screen size, version-controlled throughout.</p></div>
+      <div class="pin-card"><b>6</b><h4>Look after</h4><p>Help keep things running smoothly, long after the site goes live.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="blk rv" id="talk">
+  <div class="wrap">
+    <div class="finale">
+      <h2 data-kin>Got something you need built?</h2>
+      <p>Tell me what you're working on, what you're trying to solve, or where you're stuck. I'll tell you honestly how I can help.</p>
+      <div class="cta" style="justify-content:center">
+        <a href="mailto:cenencarungay23@gmail.com" class="btn sun">cenencarungay23@gmail.com</a>
+        <a href="work.html" class="btn ghost">Look at the work</a>
+      </div>
+      <span class="sticker" style="--r:-14deg;bottom:9%;left:6%"><svg width="60" height="60"><use href="#s-heart"/></svg></span>
+      <span class="sticker" style="--r:12deg;top:13%;right:7%"><svg width="54" height="54"><use href="#s-star"/></svg></span>
+    </div>
+    <div class="foot">
+      <span>© 2026 cenen </span>
+      <a href="work.html">Work</a><a href="about.html">About</a><a href="mailto:cenencarungay23@gmail.com">Email</a>
+    </div>
+  </div>
+</section>
+
+<script src="app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  document.getElementById('deskArt').innerHTML = artDesk();
+  playSequence();   // must run AFTER the desk SVG exists in the DOM
+
+  const bits=[['s-coffee','Coffee, any hour'],['s-bat','Cricket obsessive'],['s-plane','Like to explore'],
+    ['s-book','Reader'],['s-walk','Walks to debug'],
+    ['s-code','8+ years building'],['s-layers','Full-stack builder'],['s-bolt','Fast sites only'],['s-compass','Worked across multiple niches']];
+  document.getElementById('rail').innerHTML=[...bits,...bits]
+    .map(([id,t])=>`<span class="mini"><svg width="25" height="25"><use href="#${id}"/></svg>${t}</span>`).join('');
+
+  document.getElementById('featured').innerHTML =
+    ['paolita','igkhair','galialahav','method'].map(s=>{
+      const p=bySlug(s);
+return `<a class="wcard" href="case.html?p=${p.slug}">
+  <div class="art">
+  <img src="${projectImage(p)}" alt="${p.dom} website preview">
+  </div>
+  <div class="meta">
+    <span>
+      <b>${p.dom}</b>
+      <small>${p.sector} · ${p.year}</small>
+    </span>
+    <span class="tag" style="background:${KINDS[p.kind].c}2e">${KINDS[p.kind].label}</span>
+  </div>
+</a>`;
+    }).join('');
+
+  function tick(){
+    const t=new Date(Date.now()+(330+new Date().getTimezoneOffset())*60000);
+    document.getElementById('clock').textContent=
+      t.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'})+' my time';
+  }
+  tick(); setInterval(tick,30000);
+
+  if(window.innerWidth<820){
+    document.getElementById('heroGrid').style.gridTemplateColumns='1fr';
+  }
+});
+</script>
+</body>
+</html>

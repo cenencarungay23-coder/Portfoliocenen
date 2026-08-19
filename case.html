@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Case study — Cenen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="top"><div class="wrap in">
+  <a class="brand" href="index.html"><span class="blob"></span> Cenen</a>
+  <div class="links">
+    <a href="index.html">Home</a><a href="work.html">Work</a><a href="about.html">About</a>
+    <a href="mailto:cenencarungay23@gmail.com">Say hi</a>
+  </div>
+</div></nav>
+
+<main id="case"></main>
+
+<script src="app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const slug = new URLSearchParams(location.search).get('p') || 'paolita';
+const p = bySlug(slug) || PROJECTS[0];
+const k = KINDS[p.kind];
+  const i = PROJECTS.indexOf(p);
+  const next = PROJECTS[(i+1) % PROJECTS.length];
+  document.title = `${p.dom} — Cenen`;
+
+  const todo = t => `<div class="todo">✏️ ${t}</div>`;
+
+  document.getElementById('case').innerHTML = `
+  <section class="case-hero"><div class="wrap tight">
+    <a class="back" href="work.html">← All work</a>
+    <span class="tag" style="background:${k.c}2e;display:inline-block;margin-bottom:16px">${k.label}</span>
+    <h1 class="case-title" data-kin>${p.dom}</h1>
+    <p class="lead">${p.sector} · A ${k.label} build focused on making the site quick to load, easy to update, and simple to hand back to the team.</p>
+    <dl class="facts">
+      <div><dt>Client</dt><dd>${p.sector}</dd></div>
+      <div><dt>Year</dt><dd>${p.year}</dd></div>
+      <div><dt>Platform</dt><dd>${k.label}</dd></div>
+      <div><dt>Role</dt><dd>Design + Build</dd></div>
+    </dl>
+  </div></section>
+
+  <div class="wrap tight">
+<div class="shotframe">
+  <img src="${projectImage(p)}" alt="${p.dom} website screenshot">
+</div>
+ 
+  </div>
+
+
+
+    <h3>What I did</h3>
+    <ul>
+      <li>Audited the existing site and agreed a scope, budget and launch date up front.</li>
+      <li>Designed the key templates in Figma and signed them off before building.</li>
+      <li>Built it on ${k.label} so the team could keep editing without a developer.</li>
+      <li>Tested across browsers and devices, then handed over with documentation. </li>
+    </ul>
+    
+
+<div class="shotframe">
+  <img src="${projectImage(p)}" alt="${p.dom} website screenshot">
+</div>
+
+    
+
+    <div class="cta">
+      <a class="btn solid" href="https://${p.dom}" target="_blank" rel="noopener">Visit the live site ↗</a>
+      <a class="btn" href="work.html">Back to all work</a>
+    </div>
+
+    <div class="nextcase">
+      <span style="font-weight:700">Next project</span>
+      <a class="btn" href="case.html?p=${next.slug}">${next.dom} →</a>
+    </div>
+  </div></section>
+
+  <section class="blk" style="padding-top:0"><div class="wrap">
+    <div class="foot"><span>© 2026 Cenen</span><a href="index.html">Home</a><a href="work.html">Work</a></div>
+  </div></section>`;
+
+  /* re-run kinetic type for injected content */
+  document.querySelectorAll('[data-kin]').forEach(el=>{
+    if(el.querySelector('.kin')) return;
+    const words = el.textContent.trim().split(' ');
+    el.innerHTML = words.map(w=>`<span class="kin go">${[...w].map(c=>`<span class="ch">${c}</span>`).join('')}</span>`).join(' ');
+    el.querySelectorAll('.ch').forEach((c,n)=>c.style.animationDelay=(n*0.03).toFixed(3)+'s');
+  });
+});
+</script>
+</body>
+</html>
