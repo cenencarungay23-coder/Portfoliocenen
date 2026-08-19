@@ -185,26 +185,26 @@ section.blk{padding:clamp(56px,8vw,104px) 0;position:relative;}
    CASE STUDY PAGE — isolated from Work page
    ============================================================ */
 
-.case-page .case-hero{padding:clamp(36px,6vw,72px) 0 0;}
-.case-page .back{
+.case-hero{padding:clamp(36px,6vw,72px) 0 0;}
+.back{
   display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:.9rem;
   text-decoration:none;margin-bottom:22px;
 }
-.case-page .back:hover{color:var(--tomato);}
-.case-page .case-title{
+.back:hover{color:var(--tomato);}
+.case-title{
   font-size:clamp(2.2rem,6vw,4.2rem);margin-bottom:16px;
 }
-.case-page .facts{
+.facts{
   display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:2px solid var(--ink);
   border-radius:18px;overflow:hidden;background:#fff;margin:34px 0;
 }
-.case-page .facts div{padding:18px 20px;border-right:2px solid var(--ink);}
-.case-page .facts div:last-child{border-right:none;}
-.case-page .facts dt{
+.facts div{padding:18px 20px;border-right:2px solid var(--ink);}
+.facts div:last-child{border-right:none;}
+.facts dt{
   font-size:.74rem;text-transform:uppercase;letter-spacing:.09em;
   font-weight:700;color:var(--ink2);
 }
-.case-page .facts dd{margin:5px 0 0;font-weight:700;font-size:1.02rem;}
+.facts dd{margin:5px 0 0;font-weight:700;font-size:1.02rem;}
 .case-body{width:100%;}
 .case-body h3{
   font-size:clamp(1.3rem,2.6vw,1.9rem);margin:44px 0 12px;
@@ -223,7 +223,7 @@ section.blk{padding:clamp(56px,8vw,104px) 0;position:relative;}
 .shotframe img{
   display:block;width:100%;height:auto;max-width:100%;
 }
-.case-page .todo{
+.todo{
   background:#FFF6D8;border:2px dashed var(--ink);border-radius:14px;
   padding:14px 18px;font-size:.9rem;font-weight:600;margin:18px 0;
 }
@@ -341,11 +341,10 @@ section.blk{padding:clamp(56px,8vw,104px) 0;position:relative;}
   .work-page .grid{grid-template-columns:1fr;}
   .work-page .wcard .art{height:220px;}
 
-  .case-page main{width:min(100% - 28px,960px);}
-  .case-page .facts{grid-template-columns:1fr 1fr;}
-  .case-page .facts div:nth-child(2){border-right:none;}
-  .case-page .facts div{border-bottom:2px solid var(--ink);}
-  .case-page .facts div:nth-child(3),
-  .case-page .facts div:nth-child(4){border-bottom:none;}
-  .case-page .shotframe{border-radius:16px;}
+ .facts{grid-template-columns:1fr 1fr;}
+.facts div:nth-child(2){border-right:none;}
+.facts div{border-bottom:2px solid var(--ink);}
+.facts div:nth-child(3),
+.facts div:nth-child(4){border-bottom:none;}
+.shotframe{border-radius:16px;}
 }
