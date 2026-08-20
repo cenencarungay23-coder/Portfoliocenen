@@ -3,92 +3,355 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Case study — Cenen</title>
+<title>Case study - Cenen</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<nav class="top"><div class="wrap in">
-  <a class="brand" href="index.html"><span class="blob"></span> Cenen</a>
-  <div class="links">
-    <a href="index.html">Home</a><a href="work.html">Work</a><a href="about.html">About</a>
-    <a href="mailto:cenencarungay23@gmail.com">Say hi</a>
+<nav class="top">
+  <div class="wrap in">
+    <a class="brand" href="index.html">
+      <span class="blob"></span> Cenen
+    </a>
+
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="mailto:cenencarungay23@gmail.com">Say hi</a>
+    </div>
   </div>
-</div></nav>
+</nav>
 
 <main id="case"></main>
 
 <script src="app.js"></script>
+
 <script>
-document.addEventListener('DOMContentLoaded',()=>{
+document.addEventListener('DOMContentLoaded', () => {
+
   const slug = new URLSearchParams(location.search).get('p') || 'paolita';
-const p = bySlug(slug) || PROJECTS[0];
-const k = KINDS[p.kind];
+
+  const p = bySlug(slug) || PROJECTS[0];
+  const k = KINDS[p.kind];
+
   const i = PROJECTS.indexOf(p);
-  const next = PROJECTS[(i+1) % PROJECTS.length];
+  const next = PROJECTS[(i + 1) % PROJECTS.length];
+
+  /*
+   * ------------------------------------------------------------
+   * PROJECT-SPECIFIC "WHAT I DID" CONTENT
+   * ------------------------------------------------------------
+   */
+
+  const CASE_STUDIES = {
+
+    paolita: [
+      'Audited the existing swimwear site and agreed the scope, budget and launch plan.',
+      'Designed the key templates in Figma and refined the experience around the brand.',
+      'Built the WordPress site so the team could manage content without a developer.',
+      'Tested the storefront across browsers and devices, then handed over the finished build.'
+    ],
+
+    calem: [
+      'Reviewed the existing digital presence and mapped the key pages and user journeys.',
+      'Designed a cleaner visual system around the brand and its products.',
+      'Built the WordPress site with reusable sections the team could maintain.',
+      'Tested the finished experience across devices and prepared it for launch.'
+    ],
+
+    parcours: [
+      'Reviewed the existing travel website and identified the key content and conversion paths.',
+      'Designed clearer page structures to make destinations and travel information easier to explore.',
+      'Built the WordPress templates and reusable content sections.',
+      'Tested the site across browsers and screen sizes before handover.'
+    ],
+
+    dsa: [
+      'Audited the clinic website and reorganised the content around patients and key services.',
+      'Designed clearer service pages and calls to action.',
+      'Built the WordPress site with an easy-to-manage content structure.',
+      'Tested the experience across desktop, tablet and mobile before launch.'
+    ],
+
+    galialahav: [
+      'Reviewed the existing bridal ecommerce experience and identified areas to simplify.',
+      'Designed the key shopping templates around the visual identity of the brand.',
+      'Built the WooCommerce experience with reusable ecommerce components.',
+      'Tested product, collection and shopping flows across devices before handover.'
+    ],
+
+    omahabeach: [
+      'Reviewed the golf club website and mapped the key information visitors needed.',
+      'Designed a clearer content structure around the club, courses and visitor experience.',
+      'Built the WooCommerce-powered site with manageable content sections.',
+      'Tested the experience across browsers and devices before launch.'
+    ],
+
+    botanopia: [
+      'Reviewed the ecommerce experience and identified opportunities to make product discovery clearer.',
+      'Designed the core shopping templates around the brand and product range.',
+      'Built the WooCommerce storefront with reusable components.',
+      'Tested the shopping experience across devices and completed the handover.'
+    ],
+
+    method: [
+      'Reviewed the digital agency website and clarified its services, positioning and portfolio structure.',
+      'Designed a sharper editorial layout to let the work take centre stage.',
+      'Built the site with reusable PHP components and maintainable templates.',
+      'Tested the finished experience across browsers and screen sizes.'
+    ],
+
+    pomerleau: [
+      'Audited the corporate website and organised a large amount of content into clearer sections.',
+      'Designed reusable page structures for projects, services and company information.',
+      'Built the PHP-based experience with maintainable templates.',
+      'Tested the site across browsers and devices before delivery.'
+    ],
+
+    mightyroar: [
+      'Reviewed the creative studio website and focused the experience around its work.',
+      'Designed an editorial structure that gives projects more room to breathe.',
+      'Built the PHP templates and reusable project components.',
+      'Tested the site across browsers and devices before handover.'
+    ],
+
+    homesihave: [
+      'Reviewed the lifestyle content structure and identified ways to make the large content library easier to explore.',
+      'Designed clearer layouts for articles, categories and featured content.',
+      'Built reusable PHP templates around the publishing workflow.',
+      'Tested the experience across screen sizes and browsers before launch.'
+    ],
+
+    yeshair: [
+      'Reviewed the hair-care ecommerce experience and mapped the main shopping journeys.',
+      'Designed cleaner product and collection layouts around the brand.',
+      'Built the Shopify storefront and reusable theme sections.',
+      'Tested the storefront across devices and browsers before launch.'
+    ],
+
+    igkhair: [
+      'Reviewed the existing Shopify experience and identified areas where the shopping journey could be clearer.',
+      'Designed key ecommerce templates around the brand and product range.',
+      'Built reusable Shopify sections and templates for the team.',
+      'Tested the storefront across devices, browsers and key shopping flows.'
+    ],
+
+    soniarykiel: [
+      'Reviewed the fashion ecommerce experience and focused the structure around collections and products.',
+      'Designed editorial shopping layouts that support the visual identity of the brand.',
+      'Built the Shopify storefront with reusable theme components.',
+      'Tested the shopping experience across devices before handover.'
+    ],
+
+    tens: [
+      'Reviewed the eyewear ecommerce experience and identified ways to simplify product discovery.',
+      'Designed the key shopping templates around the product and brand experience.',
+      'Built the Shopify storefront with reusable sections and components.',
+      'Tested product, collection and checkout journeys across devices.'
+    ]
+
+  };
+
+  /*
+   * Fallback text for any future project
+   * that doesn't yet have custom content.
+   */
+
+  const whatDid = CASE_STUDIES[p.slug] || [
+    'Audited the existing site and agreed a scope, budget and launch date up front.',
+    'Designed the key templates in Figma and signed them off before building.',
+    `Built it on ${k.label} so the team could keep editing without a developer.`,
+    'Tested across browsers and devices, then handed over with documentation.'
+  ];
+
   document.title = `${p.dom} — Cenen`;
 
-  const todo = t => `<div class="todo">✏️ ${t}</div>`;
+  /*
+   * ------------------------------------------------------------
+   * CASE STUDY PAGE
+   * ------------------------------------------------------------
+   */
 
   document.getElementById('case').innerHTML = `
-  <section class="case-hero"><div class="wrap tight">
-    <a class="back" href="work.html">← All work</a>
-    <span class="tag" style="background:${k.c}2e;display:inline-block;margin-bottom:16px">${k.label}</span>
-    <h1 class="case-title" data-kin>${p.dom}</h1>
-    <p class="lead">${p.sector} · A ${k.label} build focused on making the site quick to load, easy to update, and simple to hand back to the team.</p>
-    <dl class="facts">
-      <div><dt>Client</dt><dd>${p.sector}</dd></div>
-      <div><dt>Year</dt><dd>${p.year}</dd></div>
-      <div><dt>Platform</dt><dd>${k.label}</dd></div>
-      <div><dt>Role</dt><dd>Design + Build</dd></div>
-    </dl>
-  </div></section>
 
-  <div class="wrap tight case-body">
-    <div class="shotframe">
-      <img src="${projectImage(p)}" alt="${p.dom} website screenshot">
+    <section class="case-hero">
+      <div class="wrap tight">
+
+        <a class="back" href="work.html">
+          ← All work
+        </a>
+
+        <span
+          class="tag"
+          style="background:${k.c}2e;display:inline-block;margin-bottom:16px"
+        >
+          ${k.label}
+        </span>
+
+        <h1 class="case-title" data-kin>
+          ${p.dom}
+        </h1>
+
+        <p class="lead">
+          ${p.sector} · A ${k.label} build focused on making the site
+          quick to load, easy to update, and simple to hand back to the team.
+        </p>
+
+        <dl class="facts">
+
+          <div>
+            <dt>Client</dt>
+            <dd>${p.sector}</dd>
+          </div>
+
+          <div>
+            <dt>Year</dt>
+            <dd>${p.year}</dd>
+          </div>
+
+          <div>
+            <dt>Platform</dt>
+            <dd>${k.label}</dd>
+          </div>
+
+          <div>
+            <dt>Role</dt>
+            <dd>Design + Build</dd>
+          </div>
+
+        </dl>
+
+      </div>
+    </section>
+
+
+    <!-- MAIN CASE STUDY CONTENT -->
+
+    <div class="wrap tight case-body">
+
+      <!-- ONE WEBSITE IMAGE ONLY -->
+
+      <div class="shotframe">
+        <img
+          src="${projectImage(p)}"
+          alt="${p.dom} website screenshot"
+        >
+      </div>
+
+
+      <!-- DYNAMIC WHAT I DID -->
+
+      <h3>What I did</h3>
+
+      <ul>
+        ${whatDid.map(item => `<li>${item}</li>`).join('')}
+      </ul>
+
+
+      <!-- CTA -->
+
+      <div class="cta">
+
+        <a
+          class="btn solid"
+          href="https://${p.dom}"
+          target="_blank"
+          rel="noopener"
+        >
+          Visit the live site ↗
+        </a>
+
+        <a
+          class="btn"
+          href="work.html"
+        >
+          Back to all work
+        </a>
+
+      </div>
+
+
+      <!-- NEXT PROJECT -->
+
+      <div class="nextcase">
+
+        <span style="font-weight:700">
+          Next project
+        </span>
+
+        <a
+          class="btn"
+          href="case.html?p=${next.slug}"
+        >
+          ${next.dom} →
+        </a>
+
+      </div>
+
     </div>
 
-    <h3>What I did</h3>
-    <ul>
-      <li>Audited the existing site and agreed a scope, budget and launch date up front.</li>
-      <li>Designed the key templates in Figma and signed them off before building.</li>
-      <li>Built it on ${k.label} so the team could keep editing without a developer.</li>
-      <li>Tested across browsers and devices, then handed over with documentation.</li>
-    </ul>
 
-    <div class="shotframe">
-      <img src="${projectImage(p)}" alt="${p.dom} website screenshot">
-    </div>
+    <!-- FOOTER -->
 
-    <div class="cta">
-      <a class="btn solid" href="https://${p.dom}" target="_blank" rel="noopener">Visit the live site ↗</a>
-      <a class="btn" href="work.html">Back to all work</a>
-    </div>
+    <section class="blk" style="padding-top:0">
 
-    <div class="nextcase">
-      <span style="font-weight:700">Next project</span>
-      <a class="btn" href="case.html?p=${next.slug}">${next.dom} →</a>
-    </div>
-  </div>
-  </section>
+      <div class="wrap">
+
+        <div class="foot">
+
+          <span>© 2026 Cenen</span>
+
+          <a href="index.html">Home</a>
+
+          <a href="work.html">Work</a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  `;
 
 
-  <section class="blk" style="padding-top:0"><div class="wrap">
-    <div class="foot"><span>© 2026 Cenen</span><a href="index.html">Home</a><a href="work.html">Work</a></div>
-  </div></section>`;
+  /*
+   * ------------------------------------------------------------
+   * RE-RUN KINETIC TYPE FOR INJECTED CONTENT
+   * ------------------------------------------------------------
+   */
 
-  /* re-run kinetic type for injected content */
-  document.querySelectorAll('[data-kin]').forEach(el=>{
-    if(el.querySelector('.kin')) return;
+  document.querySelectorAll('[data-kin]').forEach(el => {
+
+    if (el.querySelector('.kin')) return;
+
     const words = el.textContent.trim().split(' ');
-    el.innerHTML = words.map(w=>`<span class="kin go">${[...w].map(c=>`<span class="ch">${c}</span>`).join('')}</span>`).join(' ');
-    el.querySelectorAll('.ch').forEach((c,n)=>c.style.animationDelay=(n*0.03).toFixed(3)+'s');
+
+    el.innerHTML = words
+      .map(w =>
+        `<span class="kin go">${
+          [...w]
+            .map(c => `<span class="ch">${c}</span>`)
+            .join('')
+        }</span>`
+      )
+      .join(' ');
+
+    el.querySelectorAll('.ch').forEach((c, n) => {
+      c.style.animationDelay = (n * 0.03).toFixed(3) + 's';
+    });
+
   });
+
 });
 </script>
+
 </body>
 </html>
