@@ -41,7 +41,87 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const p = bySlug(slug) || PROJECTS[0];
   const k = KINDS[p.kind];
+const CASE_META = {
+  paolita: {
+    client: 'Swimwear brand',
+    role: 'Design + Build'
+  },
 
+  calem: {
+    client: 'Calem',
+    role: 'Design + Build'
+  },
+
+  parcours: {
+    client: 'Travel brand',
+    role: 'Design + Build'
+  },
+
+  dsa: {
+    client: 'Dental / Medical',
+    role: 'Design + Build'
+  },
+
+  galialahav: {
+    client: 'Bridal fashion brand',
+    role: 'Design + Build'
+  },
+
+  omahabeach: {
+    client: 'Golf club',
+    role: 'Design + Build'
+  },
+
+  botanopia: {
+    client: 'Ecommerce brand',
+    role: 'Design + Build'
+  },
+
+  method: {
+    client: 'Creative agency',
+    role: 'Design + Build'
+  },
+
+  pomerleau: {
+    client: 'Pomerleau',
+    role: 'Design + Build'
+  },
+
+  mightyroar: {
+    client: 'Creative studio',
+    role: 'Design + Build'
+  },
+
+  homesihave: {
+    client: 'Lifestyle brand',
+    role: 'Design + Build'
+  },
+
+  yeshair: {
+    client: 'Haircare brand',
+    role: 'Design + Build'
+  },
+
+  igkhair: {
+    client: 'Haircare brand',
+    role: 'Design + Build'
+  },
+
+  soniarykiel: {
+    client: 'Fashion brand',
+    role: 'Design + Build'
+  },
+
+  tens: {
+    client: 'Eyewear brand',
+    role: 'Design + Build'
+  }
+};
+
+const meta = CASE_META[p.slug] || {
+  client: p.sector,
+  role: 'Design + Build'
+};
   const i = PROJECTS.indexOf(p);
   const next = PROJECTS[(i + 1) % PROJECTS.length];
 
@@ -207,28 +287,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <dl class="facts">
 
-          <div>
-            <dt>Client</dt>
-            <dd>${p.sector}</dd>
-          </div>
+  <div>
+    <dt>Client</dt>
+    <dd>${meta.client}</dd>
+  </div>
 
-          <div>
-            <dt>Year</dt>
-            <dd>${p.year}</dd>
-          </div>
+  <div>
+    <dt>Year</dt>
+    <dd>${p.year}</dd>
+  </div>
 
-          <div>
-            <dt>Platform</dt>
-            <dd>${k.label}</dd>
-          </div>
+  <div>
+    <dt>Platform</dt>
+    <dd>${k.label}</dd>
+  </div>
 
-          <div>
-            <dt>Role</dt>
-            <dd>Design + Build</dd>
-          </div>
+  <div>
+    <dt>Role</dt>
+    <dd>${meta.role}</dd>
+  </div>
 
-        </dl>
-
+</dl>
       </div>
     </section>
 
