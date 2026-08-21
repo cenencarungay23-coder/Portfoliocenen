@@ -268,7 +268,7 @@ const KINDS = {
   php:{label:'PHP',c:C.tomato}, shopify:{label:'Shopify',c:C.grass}
 };
 const PROJECTS = [
-  {slug:'paolita',      dom:'paolita.co.uk',            kind:'wordpress',   sector:'Swimwear brand',      year:'2023', layout:'editorial'},
+  {slug:'paolita',      dom:'paolita.co.uk',            kind:'wordpress',   sector:'Swimwear & Resortwear',      year:'2023', layout:'editorial'},
   {slug:'calem',        dom:'calem.pt/en',              kind:'wordpress',   sector:'Port wine house',     year:'2022', layout:'editorial'},
   {slug:'parcours',     dom:'parcourscanada.com',       kind:'wordpress',   sector:'Travel operator',     year:'2022', layout:'grid'},
   {slug:'dsa',          dom:'dsa.clinic',               kind:'wordpress',   sector:'Medical clinic',      year:'2021', layout:'grid'},
